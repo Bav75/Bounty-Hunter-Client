@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LoginInput from './LoginInput';
 import { connect } from 'react-redux';
-import { addUser } from '../../actions/addUser';
+import { loginUser } from '../../actions/loginUser';
 
 
 class LoginControl extends Component {
@@ -10,7 +10,7 @@ class LoginControl extends Component {
         return (
             <div>
                 Testing from LoginControl!
-                <LoginInput addUser={this.props.addUser}/>
+                <LoginInput loginUser={this.props.loginUser}/>
             </div>
         )
     }
@@ -21,4 +21,4 @@ class LoginControl extends Component {
 //     password
 // };
 
-export default connect(null, { addUser })(LoginControl);
+export default connect(null, { loginUser })(LoginControl);
