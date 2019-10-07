@@ -16,9 +16,9 @@ class LoginControl extends Component {
     }
 }
 
-const mapStateToProps = ( {username, password} ) => {
-    username,
-    password
-};
+// const mapStateToProps = ( {username, password} ) => {
+//     username,
+//     password
+// };
 
-export default connect(mapStateToProps, { addUser })(LoginControl);
+export default connect(null, { addUser })(LoginControl);
