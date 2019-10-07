@@ -18,12 +18,13 @@ export default class LoginInput extends Component {
     handleOnSubmit = (event) => {
         event.preventDefault();
         // console.log(event.target.name);
+        const user = {username:this.state.username, password:this.state.password};
         switch (event.target.name) {
             case 'Login':
-                this.props.loginUser(this.state);
+                this.props.loginUser(user);
                 break;
             case 'Create':
-                this.props.createUser(this.state);
+                this.props.createUser(user);
                 break;
         };
         // reset state after entering 
