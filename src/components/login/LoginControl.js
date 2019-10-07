@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LoginInput from './LoginInput';
 
 export default class LoginControl extends Component {
 
@@ -6,6 +7,7 @@ export default class LoginControl extends Component {
         return (
             <div>
                 Testing from LoginControl!
+                <LoginInput />
             </div>
         )
     }
