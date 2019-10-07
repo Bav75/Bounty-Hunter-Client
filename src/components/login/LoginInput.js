@@ -16,8 +16,15 @@ export default class LoginInput extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-        // console.log(this.state);
-        this.props.loginUser(this.state);
+        console.log(event.target.name);
+        switch (event.target.name) {
+            case 'Login':
+                this.props.loginUser(this.state);
+                break;
+            case 'Create':
+                this.props.createUser(this.state);
+                break;
+        };
         // reset state after entering 
         this.setState({
             username: '',
@@ -35,7 +42,8 @@ export default class LoginInput extends Component {
                     <br/>
                     Password:<input type="password" value={this.state.password} name="password" onChange={this.handleOnChange}/>
                     <br/>
-                    <input type="submit" value="Login"/>
+                    <input type="submit" value="Login" name="Login"/>
+                    <input type="submit" value="Create New Account" name="Create"/>
                 </form>
             </div>
         )
