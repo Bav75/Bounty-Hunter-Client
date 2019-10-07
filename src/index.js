@@ -6,16 +6,17 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import rootReducer from './reducers/rootReducer';
 
 
 
 // temp reducer 
-const temp = () => {
-    return "temp reducer";
-};
+// const temp = () => {
+//     return "temp reducer";
+// };
 
 // initialize redux store 
-const store = createStore(temp);
+const store = createStore(rootReducer);
 
 ReactDOM.render(
     <Provider store={store}>
