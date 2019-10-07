@@ -7,16 +7,34 @@ export default class LoginInput extends Component {
         password: ''
     };
 
+    handleOnChange = ({ target }) => {
+        let {name, value} = target;
+        this.setState({
+            [name]: value
+        });
+    };
+
+    handleOnSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state);
+        // reset state after entering 
+        this.setState({
+            username: '',
+            password: ''
+        });
+    }
+
 
     render() {
         return (
             <div>
                 Testing from LoginInput!
-                <form>
-                    Username:<input type="text" value={this.state.username}/>
+                <form onSubmit={this.handleOnSubmit}>
+                    Username:<input type="text" value={this.state.username} name="username" onChange={this.handleOnChange}/>
                     <br/>
+                    Password:<input type="password" value={this.state.password} name="password" onChange={this.handleOnChange}/>
                     <br/>
-                    Password:<input type="text" value={this.state.password}/>
+                    <input type="submit" value="Login"/>
                 </form>
             </div>
         )
