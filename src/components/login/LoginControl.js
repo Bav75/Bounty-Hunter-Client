@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import LoginInput from './LoginInput';
+import { connect } from 'react-redux';
 
-export default class LoginControl extends Component {
+
+class LoginControl extends Component {
 
     render() {
         return (
@@ -12,3 +14,10 @@ export default class LoginControl extends Component {
         )
     }
 }
+
+const mapStateToProps = ( {username, password} ) => {
+    username,
+    password
+};
+
+export default connect(mapStateToProps)(LoginControl);
