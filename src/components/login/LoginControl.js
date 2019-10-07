@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginInput from './LoginInput';
 import { connect } from 'react-redux';
+import { addUser } from '../../actions/addUser';
 
 
 class LoginControl extends Component {
@@ -9,7 +10,7 @@ class LoginControl extends Component {
         return (
             <div>
                 Testing from LoginControl!
-                <LoginInput />
+                <LoginInput addUser={this.props.addUser}/>
             </div>
         )
     }
@@ -20,4 +21,4 @@ const mapStateToProps = ( {username, password} ) => {
     password
 };
 
-export default connect(mapStateToProps)(LoginControl);
+export default connect(mapStateToProps, { addUser })(LoginControl);
