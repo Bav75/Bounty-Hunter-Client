@@ -1,9 +1,9 @@
 export default function usersReducer(
-    state = [], action 
+    state = {}, action 
 ) {
     switch (action.type) {
         case 'LOGIN_USER':
-            return [...state, action.user];
+            return {...action.user};
         default:
             return state;
     };
