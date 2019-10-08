@@ -12,7 +12,7 @@ class SearchContainer extends Component {
     render() {
         return (
             <div className="SearchContainer">
-                <SearchList />
+                <SearchList searches={this.props.searches}/>
             </div>
         );
     };
