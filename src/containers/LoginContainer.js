@@ -10,7 +10,7 @@ class LoginControl extends Component {
 
     renderRedirect = () => {
         if (this.props.session) {
-            return (<Redirect to="/user" />)
+            return (<Redirect to={"/" + this.props.user.id} />)
         };
     };
 
@@ -25,7 +25,8 @@ class LoginControl extends Component {
     };
 };
 
-const mapStateToProps = ({ session }) => ({
+const mapStateToProps = ({ user, session }) => ({
+    user,
     session
 });
 
