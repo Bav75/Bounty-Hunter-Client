@@ -3,10 +3,22 @@ import LoginInput from './LoginInput';
 import { connect } from 'react-redux';
 import { loginUser } from '../../actions/loginUser';
 import { createUser } from '../../actions/createUser';
+import { sessionLogin } from '../../actions/sessionLogin';
 // import { Redirect } from 'react-router-dom';
 // import { logIn } from '../Home';
 
 class LoginControl extends Component {
+    render() {
+        return (
+            <div>
+                Testing from LoginControl!
+                <LoginInput sessionLogin={this.props.sessionLogin} loginUser={this.props.loginUser} createUser={this.props.createUser}/>
+            </div>
+        );
+    };
+};
+export default connect(null, { loginUser, createUser, sessionLogin })(LoginControl);
+
 
     // state = {
     //     redirect: false 
@@ -24,8 +36,7 @@ class LoginControl extends Component {
     //     }
     // }
 
-    render() {
-        // console.log(this.props)
+    // console.log(this.props)
 
         
 
@@ -39,14 +50,6 @@ class LoginControl extends Component {
         //         </div>
         //     );
         // } else {
-            return (
-                <div>
-                    {/* {this.renderRedirect()} */}
+
+          {/* {this.renderRedirect()} */}
                     {/* <button onClick={this.setRedirect}></button> */}
-                    Testing from LoginControl!
-                    <LoginInput logIn={this.props.logIn} loginUser={this.props.loginUser} createUser={this.props.createUser}/>
-                </div>
-            );
-        };
-};
-export default connect(null, { loginUser, createUser })(LoginControl);
