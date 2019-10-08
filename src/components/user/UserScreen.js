@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import SearchContainer from '../../containers/SearchContainer';
 
 class UserScreen extends Component {
 
@@ -18,9 +19,10 @@ class UserScreen extends Component {
     render() {
         if (this.props.session) { 
             return (
-                <div>
+                <div className="UserScreen">
                     <h1>Welcome to Bounty Hunter, {this.props.user.username}</h1>
                     <h2>User id: {this.state.id}</h2>
+                    <SearchContainer />
                 </div>
             );
         } else {
