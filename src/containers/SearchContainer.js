@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchList from '../components/search/SearchList';
 
 class SearchContainer extends Component {
+
     render() {
         return (
             <div className="SearchContainer">
@@ -10,5 +11,9 @@ class SearchContainer extends Component {
         );
     };
 };
+
+const mapStateToProps = ( { searches } ) => ({
+    searches
+});
 
 export default SearchContainer;
