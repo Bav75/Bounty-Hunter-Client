@@ -6,8 +6,7 @@ export default class LoginInput extends Component {
     state = {
         username: '',
         password: '',
-        form: '',
-        loggedIn: false
+        form: ''
     };
 
     handleOnChange = ({ target }) => {
@@ -20,36 +19,35 @@ export default class LoginInput extends Component {
     handleOnSubmit = (event) => {
         event.preventDefault();
         const user = {username:this.state.username, password:this.state.password};
+        const sessionLogin = this.props.sessionLogin;
         switch (event.target.name) {
             case 'Login':
-                this.props.loginUser(user);
-                this.props.logIn();
-                this.setState({
-                    loggedIn: true
-                });
+                this.props.loginUser(user, sessionLogin)
+                // console.log("This should show after loginUser")
+                // this.props.logIn();
+                // this.setState({
+                //     loggedIn: true
+                // });
                 break;
             case 'Create':
                 this.props.createUser(user);
-                this.props.logIn();
-                this.setState({
-                    loggedIn: true
-                });
+                // this.props.logIn();
+                // this.setState({
+                //     loggedIn: true
+                // });
                 break;
         };
     };
 
-    renderRedirect = () => {
-        if (this.state.loggedIn === true) {
-            return (<Redirect to="/" />)
-        };
-    };
+    
 
     render() {
+        // {this.renderRedirect()}
         switch (this.state.form) {
             case 'LOGIN':
                 return (
                     <div>
-                        {this.renderRedirect()}
+                        {/* {this.renderRedirect()} */}
                         <form onSubmit={this.handleOnSubmit} name="Login">
                         Username:<input type="text" value={this.state.username} name="username" onChange={this.handleOnChange}/>
                         <br/>

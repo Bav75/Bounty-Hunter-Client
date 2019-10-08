@@ -8,8 +8,7 @@
 const BASE_URL = 'http://localhost:3002';
 const LOGIN_URL = `${BASE_URL}/login`;
 
-export const loginUser = (user) => {
-
+export const loginUser = (user, sessionLogin) => {  
   const configObject = {
     method: "POST",
     headers: {
@@ -36,6 +35,7 @@ export const loginUser = (user) => {
             id: responseJSON.data.attributes.id
           }
         });
+        dispatch(sessionLogin);
       };
   });
   };

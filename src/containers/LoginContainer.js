@@ -4,20 +4,33 @@ import { connect } from 'react-redux';
 import { loginUser } from '../actions/loginUser';
 import { createUser } from '../actions/createUser';
 import { sessionLogin } from '../actions/sessionLogin';
-// import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 // import { logIn } from '../Home';
 
 class LoginControl extends Component {
+
+    renderRedirect = () => {
+        if (this.props.session) {
+            return (<Redirect to="/user" />)
+        };
+    };
+
     render() {
         return (
             <div>
                 Testing from LoginContainer!
+                {this.renderRedirect()}
                 <LoginInput sessionLogin={this.props.sessionLogin} loginUser={this.props.loginUser} createUser={this.props.createUser}/>
             </div>
         );
     };
 };
-export default connect(null, { loginUser, createUser, sessionLogin })(LoginControl);
+
+const mapStateToProps = ({ session }) => ({
+    session
+});
+
+export default connect(mapStateToProps, { loginUser, createUser, sessionLogin })(LoginControl);
 
 
 
