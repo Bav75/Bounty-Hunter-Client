@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import SearchList from '../components/search/SearchList';
+import { connect } from 'react-redux';
+import fetchSearches from '../actions/fetchSearches';
 
 class SearchContainer extends Component {
 
@@ -16,4 +18,4 @@ const mapStateToProps = ( { searches } ) => ({
     searches
 });
 
-export default SearchContainer;
+export default connect(mapStateToProps, { fetchSearches })(SearchContainer);
