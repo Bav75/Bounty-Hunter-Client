@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
 
 export default class LoginInput extends Component {
 
@@ -23,31 +22,18 @@ export default class LoginInput extends Component {
         switch (event.target.name) {
             case 'Login':
                 this.props.loginUser(user, sessionLogin)
-                // console.log("This should show after loginUser")
-                // this.props.logIn();
-                // this.setState({
-                //     loggedIn: true
-                // });
                 break;
             case 'Create':
-                this.props.createUser(user);
-                // this.props.logIn();
-                // this.setState({
-                //     loggedIn: true
-                // });
+                this.props.createUser(user, sessionLogin);
                 break;
         };
     };
 
-    
-
     render() {
-        // {this.renderRedirect()}
         switch (this.state.form) {
             case 'LOGIN':
                 return (
                     <div>
-                        {/* {this.renderRedirect()} */}
                         <form onSubmit={this.handleOnSubmit} name="Login">
                         Username:<input type="text" value={this.state.username} name="username" onChange={this.handleOnChange}/>
                         <br/>

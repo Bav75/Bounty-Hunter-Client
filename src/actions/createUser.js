@@ -8,7 +8,7 @@
 const BASE_URL = 'http://localhost:3002';
 const USERS_URL = `${BASE_URL}/users`;
 
-export const createUser = (user) => {
+export const createUser = (user, sessionLogin) => {
 
   const configObject = {
     method: "POST",
@@ -28,6 +28,7 @@ export const createUser = (user) => {
         console.log(`Status: ${responseJSON.status}`);
         console.log(`Errors detected: ${responseJSON.errors}`);
       } else {
+        // if user created successfully, dispatch create and login actions
         dispatch({
           type: "CREATE_USER",
           user: {
@@ -36,6 +37,7 @@ export const createUser = (user) => {
             id: responseJSON.data.attributes.id
           }
         });
+        dispatch(sessionLogin);
       };
   });
   };

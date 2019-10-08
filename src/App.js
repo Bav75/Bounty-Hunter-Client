@@ -12,9 +12,9 @@ function App() {
 
   return (
     <div className="App">
-      <Route exact path ='/login' component={LoginContainer}/>
-      <Route exact path ='/' component={Home}/>
-      <Route exact path ='/user' component={UserScreen}/>
+      <Route exact path ='/' component={LoginContainer}/>
+      {/* <Route exact path ='/' component={Home}/> */}
+      <Route exact path ='/:user_id' component={UserScreen}/>
     </div>
   );
 };

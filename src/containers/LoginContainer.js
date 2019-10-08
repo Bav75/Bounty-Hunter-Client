@@ -5,7 +5,6 @@ import { loginUser } from '../actions/loginUser';
 import { createUser } from '../actions/createUser';
 import { sessionLogin } from '../actions/sessionLogin';
 import { Redirect } from 'react-router-dom';
-// import { logIn } from '../Home';
 
 class LoginControl extends Component {
 
