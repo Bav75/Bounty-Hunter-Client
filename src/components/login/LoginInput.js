@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom'
 
 export default class LoginInput extends Component {
 
     state = {
         username: '',
         password: '',
-        form: ''
+        form: '',
+        loggedIn: false
     };
 
     handleOnChange = ({ target }) => {
@@ -22,17 +24,27 @@ export default class LoginInput extends Component {
         switch (event.target.name) {
             case 'Login':
                 this.props.loginUser(user);
+                this.props.logIn();
+                this.setState({
+                    loggedIn: true
+                });
                 break;
             case 'Create':
                 this.props.createUser(user);
                 break;
         };
         // reset state after entering 
-        this.setState({
-            username: '',
-            password: '',
-            form: ''
-        });
+        // this.setState({
+        //     username: '',
+        //     password: '',
+        //     form: ''
+        // });
+    };
+
+    renderRedirect = () => {
+        if (this.state.loggedIn === true) {
+            return (<Redirect to="/" />)
+        };
     };
 
     render() {
@@ -41,6 +53,7 @@ export default class LoginInput extends Component {
             case 'LOGIN':
                 return (
                     <div>
+                        {this.renderRedirect()}
                         <form onSubmit={this.handleOnSubmit} name="Login">
                         Username:<input type="text" value={this.state.username} name="username" onChange={this.handleOnChange}/>
                         <br/>
@@ -63,8 +76,8 @@ export default class LoginInput extends Component {
             default: 
                 return (
                     <div>
-                            <button onClick={() => {this.setState({form: 'LOGIN'})}}>Login</button>
-                            <button onClick={() => {this.setState({form: 'CREATE'})}}>Create New Account</button>
+                        <button onClick={() => {this.setState({form: 'LOGIN'})}}>Login</button>
+                        <button onClick={() => {this.setState({form: 'CREATE'})}}>Create New Account</button>
                     </div>
                 );
         };
