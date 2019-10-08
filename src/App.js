@@ -12,8 +12,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <p>Testing from App!</p> */}
-      {/* <LoginControl /> */}
       <Route exact path ='/login' component={LoginControl}/>
       <Route exact path ='/' component={Home}/>
       <Route exact path ='/user' component={UserScreen}/>
