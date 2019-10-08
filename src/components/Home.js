@@ -3,16 +3,13 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Home extends Component {
-    
-   
     render() {
-        if (this.state.loggedIn === true) {
+        if (this.props.session) {
             return (
                 <Redirect to="/user" />
             );
         } else {
             return (
-                // <LoginContainer logIn={this.logIn}/>
                 <Redirect to="/login"/>
             );
         };

@@ -1,9 +1,9 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import LoginControl from './components/login/LoginControl';
+import LoginContainer from './containers/LoginContainer';
 import Home from './components/Home';
-import { Redirect, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import UserScreen from './components/user/UserScreen';
 // import { connect } from 'react-redux';
 
@@ -12,10 +12,9 @@ function App() {
 
   return (
     <div className="App">
-      <Route exact path ='/login' component={LoginControl}/>
+      <Route exact path ='/login' component={LoginContainer}/>
       <Route exact path ='/' component={Home}/>
       <Route exact path ='/user' component={UserScreen}/>
-
     </div>
   );
 };
