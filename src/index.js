@@ -11,7 +11,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 
 // initialize redux store 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
     <Provider store={store}>

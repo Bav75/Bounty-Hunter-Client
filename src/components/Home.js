@@ -17,6 +17,7 @@ class Home extends Component {
 
     render() {
         console.log(this.props)
+        console.log(this.state)
         // if (Object.entries(this.props.user).length !== 0) {
         if (this.state.loggedIn === true) {
             const username = this.props.user.username;
