@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import SearchList from '../components/search/SearchList';
 import { connect } from 'react-redux';
-import fetchSearches from '../actions/fetchSearches';
+import { fetchSearches } from '../actions/fetchSearches';
 
 class SearchContainer extends Component {
+
+    componentDidMount() {
+        this.props.fetchSearches();
+    };
 
     render() {
         return (

@@ -1,6 +1,18 @@
+// export const fetchSearches = () => {
+//     return {
+//         type: "FETCH",
+//         searches: []
+//     };
+// };
+
 export const fetchSearches = () => {
-    return {
-        type: "FETCH",
-        searches: []
+    const API_URL = 'http://api.stackexchange.com/2.2/questions/featured?order=desc&sort=activity&site=stackoverflow';
+
+    return (dispatch) => {
+        fetch(API_URL).then(response => {return response.json()})
+        .then(responseJSON => dispatch({
+            type: 'FETCH',
+            searches: [...responseJSON.items]
+        }));
     };
 };
