@@ -19,7 +19,6 @@ export default class LoginInput extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-        // console.log(event.target.name);
         const user = {username:this.state.username, password:this.state.password};
         switch (event.target.name) {
             case 'Login':
@@ -31,14 +30,12 @@ export default class LoginInput extends Component {
                 break;
             case 'Create':
                 this.props.createUser(user);
+                this.props.logIn();
+                this.setState({
+                    loggedIn: true
+                });
                 break;
         };
-        // reset state after entering 
-        // this.setState({
-        //     username: '',
-        //     password: '',
-        //     form: ''
-        // });
     };
 
     renderRedirect = () => {
@@ -48,7 +45,6 @@ export default class LoginInput extends Component {
     };
 
     render() {
-
         switch (this.state.form) {
             case 'LOGIN':
                 return (
