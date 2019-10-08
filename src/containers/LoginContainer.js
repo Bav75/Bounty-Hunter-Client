@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import LoginInput from './LoginInput';
+import LoginInput from '../components/login/LoginInput';
 import { connect } from 'react-redux';
-import { loginUser } from '../../actions/loginUser';
-import { createUser } from '../../actions/createUser';
-import { sessionLogin } from '../../actions/sessionLogin';
+import { loginUser } from '../actions/loginUser';
+import { createUser } from '../actions/createUser';
+import { sessionLogin } from '../actions/sessionLogin';
 // import { Redirect } from 'react-router-dom';
 // import { logIn } from '../Home';
 
@@ -11,13 +11,18 @@ class LoginControl extends Component {
     render() {
         return (
             <div>
-                Testing from LoginControl!
+                Testing from LoginContainer!
                 <LoginInput sessionLogin={this.props.sessionLogin} loginUser={this.props.loginUser} createUser={this.props.createUser}/>
             </div>
         );
     };
 };
 export default connect(null, { loginUser, createUser, sessionLogin })(LoginControl);
+
+
+
+
+
 
 
     // state = {

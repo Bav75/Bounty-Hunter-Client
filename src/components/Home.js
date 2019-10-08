@@ -1,24 +1,10 @@
 import React, { Component } from 'react';
-import LoginControl from './login/LoginControl';
-// import UserScreen from './user/UserScreen';
 import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default class Home extends Component {
+class Home extends Component {
     
-    // handling log in state locally for now rather than in redux store 
-
-    // add log in state & method to redux store
-    state = {
-        loggedIn: false
-    };
-
-    // add as action to store 
-    logIn = () => {
-        this.setState({
-            loggedIn: true
-        });
-    };
-
+   
     render() {
         if (this.state.loggedIn === true) {
             return (
@@ -26,8 +12,31 @@ export default class Home extends Component {
             );
         } else {
             return (
-                <LoginControl logIn={this.logIn}/>
+                // <LoginContainer logIn={this.logIn}/>
+                <Redirect to="/login"/>
             );
         };
     };
 };
+
+const mapStateToProps = ({ session }) => ({
+    session
+});
+
+export default connect(mapStateToProps)(Home);
+
+
+
+ // handling log in state locally for now rather than in redux store 
+
+    // add log in state & method to redux store
+    // state = {
+    //     loggedIn: false
+    // };
+
+    // // add as action to store 
+    // logIn = () => {
+    //     this.setState({
+    //         loggedIn: true
+    //     });
+    // };
