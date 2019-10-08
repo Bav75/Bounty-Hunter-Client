@@ -3,7 +3,7 @@ import LoginInput from './LoginInput';
 import { connect } from 'react-redux';
 import { loginUser } from '../../actions/loginUser';
 import { createUser } from '../../actions/createUser';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 // import { logIn } from '../Home';
 
 class LoginControl extends Component {
@@ -48,11 +48,5 @@ class LoginControl extends Component {
                 </div>
             );
         };
-    // };
 };
-
-// const mapStateToProps = ( { user } ) => ({
-//     user
-// });
-
 export default connect(null, { loginUser, createUser })(LoginControl);

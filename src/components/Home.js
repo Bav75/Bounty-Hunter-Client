@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import LoginControl from './login/LoginControl';
-import UserScreen from './user/UserScreen';
+// import UserScreen from './user/UserScreen';
+import { Redirect } from 'react-router-dom';
 
 export default class Home extends Component {
     
+    // handling log in state locally for now rather than in redux store 
     state = {
         loggedIn: false
     };
@@ -17,7 +19,7 @@ export default class Home extends Component {
     render() {
         if (this.state.loggedIn === true) {
             return (
-                <UserScreen />
+                <Redirect to="/user" />
             );
         } else {
             return (
