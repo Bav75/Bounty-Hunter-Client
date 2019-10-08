@@ -24,17 +24,18 @@ export const createUser = (user) => {
     dispatch({ type: 'CHECKING_USER'})
     fetch(USERS_URL, configObject).then(response => {return response.json()})
     .then(responseJSON => {
-      if (responseJSON.status < 300) {
+      if (responseJSON.hasOwnProperty("status")) {
+        console.log(`Status: ${responseJSON.status}`);
+        console.log(`Errors detected: ${responseJSON.errors}`);
+      } else {
         dispatch({
           type: "CREATE_USER",
           user: {
             username: responseJSON.data.attributes.username,
-            password: responseJSON.data.attributes.password
+            password: responseJSON.data.attributes.password,
+            id: responseJSON.data.attributes.id
           }
-        })
-      } else {
-        console.log(`Status: ${responseJSON.status}`);
-        console.log(`Errors detected: ${responseJSON.errors}`);
+        });
       };
   });
   };
