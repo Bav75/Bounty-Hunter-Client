@@ -6,6 +6,8 @@ import { Redirect } from 'react-router-dom';
 export default class Home extends Component {
     
     // handling log in state locally for now rather than in redux store 
+
+    // add log in state & method to redux store
     state = {
         loggedIn: false
     };
