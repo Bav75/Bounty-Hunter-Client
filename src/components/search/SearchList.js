@@ -13,9 +13,9 @@ class SearchList extends Component {
         );
 
         return (
-        <div>
+        <ul>
             {searches}
-        </div>
+        </ul>
         );
     };
 };

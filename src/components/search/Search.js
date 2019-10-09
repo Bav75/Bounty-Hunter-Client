@@ -1,8 +1,9 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Search = (props) => {
-    console.log(props);
-    return (<div>{props.title}</div>);
+    return (
+    <li onClick={() => {window.open(props.link, '_blank')}}>{props.title}</li>
+    );
 };
 
 export default Search;
