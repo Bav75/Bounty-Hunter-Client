@@ -1,9 +1,11 @@
 export default function searchReducer(
-    state = [], action 
+    state = { content: [], loading: false}, action 
 ) {
     switch (action.type) {
+        case 'LOADING':
+            return {loading: true, content: [...state.content]}
         case 'FETCH':
-            return [...action.searches];
+            return {loading: false, content: action.searches};
         default:
             return state;
     };

@@ -9,10 +9,22 @@ class SearchContainer extends Component {
         this.props.fetchSearches();
     };
 
+    renderSearchList = () => {
+        if (this.props.searches.loading) {
+            return (
+                <p>Loading...</p>
+            );
+        } else {
+            return (
+                <SearchList searches={this.props.searches}/>
+            );
+        };
+    };
+
     render() {
         return (
             <div className="SearchContainer">
-                <SearchList searches={this.props.searches}/>
+                {this.renderSearchList()}
             </div>
         );
     };
