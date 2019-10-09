@@ -15,7 +15,7 @@ export const markBounty = (search) => {
       };
 
     return (dispatch) => {
-        dispatch({type: 'LOADING'});
+        dispatch({type: 'LOADING_BOUNTIES'});
         fetch(BOUNTY_URL, configObject).then(response => {return response.json()})
         .then(responseJSON => {
             if (responseJSON.hasOwnProperty("status")) {
