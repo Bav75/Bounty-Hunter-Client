@@ -17,7 +17,7 @@ class SearchContainer extends Component {
             );
         } else {
             return (
-                <SearchList searches={this.props.searches.content} markBounty={this.props.markBounty}/>
+                <SearchList searches={this.props.searches.content} markBounty={this.props.markBounty} userId={this.props.user.id}/>
             );
         };
     };
@@ -31,7 +31,8 @@ class SearchContainer extends Component {
     };
 };
 
-const mapStateToProps = ( { searches } ) => ({
+const mapStateToProps = ( { user, searches } ) => ({
+    user,
     searches
 });
 
