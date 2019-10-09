@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchList from '../components/search/SearchList';
 import { connect } from 'react-redux';
 import { fetchSearches } from '../actions/fetchSearches';
+import { markBounty } from '../actions/markBounty';
 
 class SearchContainer extends Component {
 
@@ -16,7 +17,7 @@ class SearchContainer extends Component {
             );
         } else {
             return (
-                <SearchList searches={this.props.searches.content}/>
+                <SearchList searches={this.props.searches.content} markBounty={this.props.markBounty}/>
             );
         };
     };
@@ -34,4 +35,4 @@ const mapStateToProps = ( { searches } ) => ({
     searches
 });
 
-export default connect(mapStateToProps, { fetchSearches })(SearchContainer);
+export default connect(mapStateToProps, { fetchSearches, markBounty })(SearchContainer);

@@ -8,7 +8,7 @@ class SearchList extends Component {
 
         const searches = this.props.searches.map(
             (search, index) => {
-                return (<Search key={index} {...search}/>)
+                return (<Search key={index} {...search} markBounty={this.props.markBounty}/>)
             }
         );
 
