@@ -15,8 +15,18 @@ export const markBounty = (search) => {
       };
 
     return (dispatch) => {
-        dispatch({type: 'MARKING'});
+        dispatch({type: 'LOADING'});
         fetch(BOUNTY_URL, configObject).then(response => {return response.json()})
-        .then(responseJSON => console.log(responseJSON));
-    };
+        .then(responseJSON => {
+            if (responseJSON.hasOwnProperty("status")) {
+                console.log(`Status: ${responseJSON.status}`);
+                console.log(`Errors detected: ${responseJSON.errors}`);
+              } else {
+                  dispatch({
+                      type: 'MARK_BOUNTY',
+                      bounty: {...responseJSON.data.attributes}
+                  });
+                };
+            });
+        };
 };
