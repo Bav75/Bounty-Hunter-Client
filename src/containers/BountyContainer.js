@@ -4,9 +4,9 @@ import { fetchBounties } from '../actions/fetchBounties';
 
 class BountyContainer extends Component {
 
-    // componentDidMount() {
-    //     this.props.fetchSearches();
-    // };
+    componentDidMount() {
+        this.props.fetchBounties(this.props.user.id);
+    };
 
     // renderSearchList = () => {
     //     if (this.props.searches.loading) {
@@ -20,13 +20,14 @@ class BountyContainer extends Component {
     //     };
     // };
 
-    // render() {
-    //     return (
-    //         <div className="SearchContainer">
-    //             {this.renderSearchList()}
-    //         </div>
-    //     );
-    // };
+    render() {
+        return (
+            <div className="BountyContainer">
+                I'm the bounty container 
+                {/* {this.renderSearchList()} */}
+            </div>
+        );
+    };
 };
 
 const mapStateToProps = ( { user, bounties } ) => ({
