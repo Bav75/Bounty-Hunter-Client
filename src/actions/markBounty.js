@@ -21,6 +21,9 @@ export const markBounty = (search) => {
             if (responseJSON.hasOwnProperty("status")) {
                 console.log(`Status: ${responseJSON.status}`);
                 console.log(`Errors detected: ${responseJSON.errors}`);
+                dispatch({
+                    type: "RE_RENDER"
+                });
               } else {
                   dispatch({
                       type: 'MARK_BOUNTY',

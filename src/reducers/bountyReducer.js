@@ -8,6 +8,8 @@ export default function bountyReducer(
             return {loading: false, content: [...state.content, action.bounty]};
         case 'FETCHING_BOUNTIES':
             return {loading: false, content: action.content};
+        case 'RE_RENDER':
+            return {...state, loading: false};
         default:
             return state;
     };
