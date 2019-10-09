@@ -1,7 +1,8 @@
 import React from 'react';
 
-const Search = () => {
-    return (<div>I'm an individual search</div>);
+const Search = (props) => {
+    console.log(props);
+    return (<div>{props.title}</div>);
 };
 
 export default Search;

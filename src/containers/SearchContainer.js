@@ -16,7 +16,7 @@ class SearchContainer extends Component {
             );
         } else {
             return (
-                <SearchList searches={this.props.searches}/>
+                <SearchList searches={this.props.searches.content}/>
             );
         };
     };
