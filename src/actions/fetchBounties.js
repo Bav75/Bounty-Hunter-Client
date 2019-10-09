@@ -1,6 +1,6 @@
 export const fetchBounties = (userId) => {
     const BASE_URL = 'http://localhost:3002';
-    const BOUNTY_URL = `${BASE_URL}/bounties`;
+    const BOUNTY_URL = `${BASE_URL}/fetch`;
 
     const configObject = {
         method: "POST",
@@ -16,6 +16,9 @@ export const fetchBounties = (userId) => {
     return (dispatch) => {
         dispatch({type: 'LOADING'});
         fetch(BOUNTY_URL, configObject).then(response => {return response.json()})
-        .then(responseJSON => console.log(responseJSON));
+        .then(responseJSON => dispatch({
+            type: 'FETCH',
+            content: responseJSON.content
+        }));
     };
 };
