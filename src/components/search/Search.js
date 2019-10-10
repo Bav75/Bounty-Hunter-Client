@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ListGroup from 'react-bootstrap/ListGroup'
+
 const Search = (props) => {
     return (
-    <li> <a onClick={() => {window.open(props.link, '_blank')}}>{props.title}</a> <button onClick={() => {props.markBounty(props)}}>Mark Bounty</button></li>
+    <ListGroup.Item>
+        <a onClick={() => {window.open(props.link, '_blank')}}>{props.title}</a> 
+        <button onClick={() => {props.markBounty(props)}}>Mark Bounty</button>
+    </ListGroup.Item>
     );
 };
 
