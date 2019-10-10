@@ -5,6 +5,8 @@ import Tab from 'react-bootstrap/Tab'
 import ListGroup from 'react-bootstrap/ListGroup'
 
 class SearchList extends Component {
+
+
     render () {
         // console.log("Generated from within searchList")
         // console.log(this.props)
@@ -16,15 +18,24 @@ class SearchList extends Component {
                 )
             }
         );
+        
 
         return (
-        <Tabs defaultActiveKey="results">
-            <Tab eventKey="results" title="results">
-                {/* <ul> */}
-                <ListGroup id="testGroup">
-                    {searches}
+        <Tabs defaultActiveKey="page-1">
+            <Tab eventKey="page-1" title="Page 1">
+                <ListGroup>
+                    {searches.slice(0, 10)}
                 </ListGroup>
-                {/* </ul> */}
+            </Tab>   
+            <Tab eventKey="page-2" title="Page 2">
+                <ListGroup>
+                    {searches.slice(10, 20)}
+                </ListGroup>
+            </Tab>   
+            <Tab eventKey="page-3" title="Page 3">
+                <ListGroup>
+                    {searches.slice(20)}
+                </ListGroup>
             </Tab>   
         </Tabs>
         );
