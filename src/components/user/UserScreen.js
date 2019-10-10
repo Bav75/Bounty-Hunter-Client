@@ -39,3 +39,4 @@ const mapStateToProps = ( { user, session } ) => ({
 });
 
 export default connect(mapStateToProps)(UserScreen);
+

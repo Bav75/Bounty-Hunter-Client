@@ -23,7 +23,7 @@ const Bounty = (props) => {
                     <br/>
                     <a href={props.link}>View This Bounty</a>
                     <br/>
-                    <button>Stop Tracking This Bounty</button>
+                    <button onClick={() => (props.remove())}>Stop Tracking This Bounty</button>
                     </Card.Body>
                 </Accordion.Collapse>
                 
