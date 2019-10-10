@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Search from './Search';
+import Tabs from 'react-bootstrap/Tabs'
+import Tab from 'react-bootstrap/Tab'
 
 class SearchList extends Component {
     render () {
@@ -13,9 +15,13 @@ class SearchList extends Component {
         );
 
         return (
-        <ul>
-            {searches}
-        </ul>
+        <Tabs defaultActiveKey="results">
+            <Tab eventKey="results" title="results">
+                <ul>
+                {searches}
+                </ul>
+            </Tab>   
+        </Tabs>
         );
     };
 };
