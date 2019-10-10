@@ -5,6 +5,7 @@ import { loginUser } from '../actions/loginUser';
 import { createUser } from '../actions/createUser';
 import { sessionLogin } from '../actions/sessionLogin';
 import { Redirect } from 'react-router-dom';
+import Jumbotron from 'react-bootstrap/Jumbotron'
 
 class LoginControl extends Component {
 
@@ -17,9 +18,12 @@ class LoginControl extends Component {
     render() {
         return (
             <div>
-                Testing from LoginContainer!
                 {this.renderRedirect()}
-                <LoginInput sessionLogin={this.props.sessionLogin} loginUser={this.props.loginUser} createUser={this.props.createUser}/>
+                <Jumbotron fluid ="jumbo">
+                    <h1 className="header-text">Bounty Hunter</h1>
+                    <h2 className="header-text">A simple management tool for Stack Overflow bounties.</h2>
+                    <LoginInput sessionLogin={this.props.sessionLogin} loginUser={this.props.loginUser} createUser={this.props.createUser}/>
+                </Jumbotron>
             </div>
         );
     };

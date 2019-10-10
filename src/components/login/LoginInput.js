@@ -39,7 +39,7 @@ export default class LoginInput extends Component {
                         <br/>
                         Password:<input type="password" value={this.state.password} name="password" onChange={this.handleOnChange}/>
                         <br/>
-                        <input type="submit" value="Login" /></form>
+                        <input type="submit" value="Login" className="button-styling"/></form>
                     </div>
                 );
             case 'CREATE':
@@ -50,14 +50,14 @@ export default class LoginInput extends Component {
                         <br/>
                         Password:<input type="password" value={this.state.password} name="password" onChange={this.handleOnChange}/>
                         <br/>
-                        <input type="submit" value="Create Account" /></form>
+                        <input type="submit" value="Create Account" className="button-styling"/></form>
                     </div>
                 );
             default: 
                 return (
                     <div>
-                        <button onClick={() => {this.setState({form: 'LOGIN'})}}>Login</button>
-                        <button onClick={() => {this.setState({form: 'CREATE'})}}>Create New Account</button>
+                        <button onClick={() => {this.setState({form: 'LOGIN'})}} className="button-styling">Login</button>
+                        <button onClick={() => {this.setState({form: 'CREATE'})}} className="button-styling">Create New Account</button>
                     </div>
                 );
         };

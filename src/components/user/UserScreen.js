@@ -19,10 +19,13 @@ class UserScreen extends Component {
     };
 
     render() {
+        let jumbotronStyle = {
+            background: '#cc33ff'
+        }
         if (this.props.session) { 
             return ( 
                 <div className="UserScreen">
-                    <Jumbotron>
+                    <Jumbotron fluid id="userScreenJumbo" className="jumbo">
                         <h1>Welcome to Bounty Hunter, {this.props.user.username}</h1>
                         <h2>User id: {this.state.id}</h2>
                     </Jumbotron>
