@@ -21,7 +21,7 @@ class LoginControl extends Component {
                 {this.renderRedirect()}
                 <Jumbotron fluid ="jumbo">
                     <h1 className="header-text">Bounty Hunter</h1>
-                    <h2 className="header-text">A simple management tool for Stack Overflow bounties.</h2>
+                    <h2 className="sub-header-text">A simple management tool for Stack Overflow bounties.</h2>
                     <LoginInput sessionLogin={this.props.sessionLogin} loginUser={this.props.loginUser} createUser={this.props.createUser}/>
                 </Jumbotron>
             </div>

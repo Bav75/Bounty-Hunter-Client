@@ -35,9 +35,39 @@
   margin: 2rem 0;
 }
 
+.sub-header-text {
+  line-height: 2;
+  font-size: 1.6rem;
+}
+
 .button-styling {
     padding: .5rem 1rem;
     font-size: 1.25rem;
     line-height: 1.5;
     border-radius: .3rem;
+    margin-top: 5px;
+}
+
+.small-button-styling {
+    padding: .5rem 1rem;
+    font-size: .5rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+}
+
+.link-styling {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  font-family: arial, sans-serif;
+  color: #069;
+  cursor: pointer;
+}
+
+button + button {
+  margin-left: 10px;
+}
+
+label {
+  font-size: 1.25rem;
 }

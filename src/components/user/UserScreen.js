@@ -26,10 +26,11 @@ class UserScreen extends Component {
             return ( 
                 <div className="UserScreen">
                     <Jumbotron fluid id="userScreenJumbo" className="jumbo">
-                        <h1>Welcome to Bounty Hunter, {this.props.user.username}</h1>
-                        <h2>User id: {this.state.id}</h2>
+                        <h1 className="sub-header-text">Welcome to Bounty Hunter, {this.props.user.username}</h1>
                     </Jumbotron>
+                    <h2 className="sub-header-text">Today's open bounties</h2>
                     <SearchContainer />
+                    <h2 className="sub-header-text">Bounties currently tracked</h2>
                     <BountyContainer />
                 </div>
             );

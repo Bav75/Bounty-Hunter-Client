@@ -35,9 +35,9 @@ export default class LoginInput extends Component {
                 return (
                     <div>
                         <form onSubmit={this.handleOnSubmit} name="Login">
-                        Username:<input type="text" value={this.state.username} name="username" onChange={this.handleOnChange}/>
+                        <label>Username:</label><input type="text" value={this.state.username} name="username" onChange={this.handleOnChange}/>
                         <br/>
-                        Password:<input type="password" value={this.state.password} name="password" onChange={this.handleOnChange}/>
+                        <label>Password:</label><input type="password" value={this.state.password} name="password" onChange={this.handleOnChange}/>
                         <br/>
                         <input type="submit" value="Login" className="button-styling"/></form>
                     </div>
@@ -46,9 +46,9 @@ export default class LoginInput extends Component {
                 return (
                     <div>
                         <form onSubmit={this.handleOnSubmit} name="Create">
-                        Username:<input type="text" value={this.state.username} name="username" onChange={this.handleOnChange}/>
+                        <label>Username:</label><input type="text" value={this.state.username} name="username" onChange={this.handleOnChange}/>
                         <br/>
-                        Password:<input type="password" value={this.state.password} name="password" onChange={this.handleOnChange}/>
+                        <label>Password:</label><input type="password" value={this.state.password} name="password" onChange={this.handleOnChange}/>
                         <br/>
                         <input type="submit" value="Create Account" className="button-styling"/></form>
                     </div>

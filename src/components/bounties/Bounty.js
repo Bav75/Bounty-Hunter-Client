@@ -4,7 +4,7 @@ import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 
 const Bounty = (props) => {
-    console.log(props)
+    // console.log(props)
 
     let unix_time = parseInt(props.bounty_closes_date * 1000);
     let ending_date = new Date(unix_time);

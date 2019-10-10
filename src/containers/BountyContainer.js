@@ -24,7 +24,6 @@ class BountyContainer extends Component {
     render() {
         return (
             <div className="BountyContainer">
-                I'm the bounty container 
                 {this.renderBountyList()}
             </div>
         );
