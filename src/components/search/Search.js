@@ -6,7 +6,7 @@ const Search = (props) => {
 
 
     return (
-    <ListGroup.Item id="results">
+    <ListGroup.Item>
         <a onClick={() => {window.open(props.link, '_blank')}}>{props.title}</a> 
         <button onClick={() => {props.markBounty(props)}}>Mark Bounty</button>
     </ListGroup.Item>
