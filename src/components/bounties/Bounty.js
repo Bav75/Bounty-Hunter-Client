@@ -5,11 +5,20 @@ import Card from 'react-bootstrap/Card'
 
 const Bounty = (props) => {
     return (
-        <Card>
-            <p>{props.title}</p>
-            <p>{props.bounty_amount}</p>
-            <p>{props.bounty_closes_date}</p>
-        </Card>
+        <Accordion>
+            <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="0">
+                {props.title}
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey="0">
+                    <Card.Body>
+                    {props.bounty_amount}
+                    {props.bounty_closes_date}
+                    </Card.Body>
+                </Accordion.Collapse>
+                
+            </Card>
+        </Accordion>
     );
 };
 

@@ -13,9 +13,9 @@ class BountyList extends Component {
         );
 
         return (
-        <Accordion>
-            {bounties}
-        </Accordion>
+            <div>
+                {bounties}
+            </div>
         );
     };
 };
