@@ -13,17 +13,17 @@ const Bounty = (props) => {
         <Accordion>
             <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="0">
-                {props.title}
+                <p className="link-styling">{props.title}</p>
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="0">
                     <Card.Body>
+                    <button className="link-styling" onClick={() => {window.open(props.link, '_blank')}}>View This Bounty</button>
+                    <br/>
                     Bounty Reward: +{props.bounty_amount} Reputation
                     <br/>
                     Bounty End Date: {ending_date.toString()}
                     <br/>
-                    <a href={props.link}>View This Bounty</a>
-                    <br/>
-                    <button onClick={() => (props.remove(props.id))}>Stop Tracking This Bounty</button>
+                    <button className="small-button-styling" onClick={() => (props.remove(props.id))}>Stop Tracking This Bounty</button>
                     </Card.Body>
                 </Accordion.Collapse>
                 
