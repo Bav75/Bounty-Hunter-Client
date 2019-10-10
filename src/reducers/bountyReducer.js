@@ -10,6 +10,9 @@ export default function bountyReducer(
             return {loading: false, content: action.content};
         case 'RE_RENDER':
             return {...state, loading: false};
+        case 'DELETE_BOUNTY':
+            const bounties = state.content.filter(bounty => bounty.id !== action.bountyId);
+            return {loading: false, content: bounties};
         default:
             return state;
     };

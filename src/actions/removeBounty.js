@@ -1,7 +1,9 @@
-const BASE_URL = 'http://localhost:3002';
-const BOUNTY_URL = `${BASE_URL}/bounties`;
-
 export const removeBounty = (bountyId) => {
+
+
+    const BASE_URL = 'http://localhost:3002';
+    const BOUNTY_URL = `${BASE_URL}/bounties/` + bountyId;
+
 
     const configObject = {
         method: "DELETE",
@@ -19,7 +21,8 @@ export const removeBounty = (bountyId) => {
         fetch(BOUNTY_URL, configObject).then(response => {return response.json()})
         .then(responseJSON => {
             dispatch({
-                type: 'RE_RENDER'
+                type: 'DELETE_BOUNTY',
+                bountyId
             });
         });
     };
