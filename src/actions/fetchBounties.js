@@ -1,5 +1,6 @@
 export const fetchBounties = (userId) => {
-    const BASE_URL = 'http://localhost:3002';
+    // const BASE_URL = 'http://localhost:3002';
+    const BASE_URL = 'https://bount-hunter-api.herokuapp.com/';
     const BOUNTY_URL = `${BASE_URL}/fetch`;
 
     const configObject = {

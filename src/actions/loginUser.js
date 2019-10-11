@@ -5,7 +5,8 @@
 //     };
 //   };
 
-const BASE_URL = 'http://localhost:3002';
+// const BASE_URL = 'http://localhost:3002';
+const BASE_URL = 'https://bount-hunter-api.herokuapp.com/';
 const LOGIN_URL = `${BASE_URL}/login`;
 
 export const loginUser = (user, sessionLogin) => {  

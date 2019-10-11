@@ -5,7 +5,10 @@
 //     };
 //   };
 
-const BASE_URL = 'http://localhost:3002';
+// https://bount-hunter-api.herokuapp.com/
+
+// const BASE_URL = 'http://localhost:3002';
+const BASE_URL = 'https://bount-hunter-api.herokuapp.com/';
 const USERS_URL = `${BASE_URL}/users`;
 
 export const createUser = (user, sessionLogin) => {
