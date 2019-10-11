@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import SearchContainer from '../../containers/SearchContainer';
 import BountyContainer from '../../containers/BountyContainer';
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import { sessionLogout } from '../../actions/sessionLogout';
 
 class UserScreen extends Component {
 
@@ -27,6 +28,7 @@ class UserScreen extends Component {
                 <div className="UserScreen">
                     <Jumbotron fluid id="userScreenJumbo" className="jumbo">
                         <h1 className="sub-header-text">Welcome to Bounty Hunter, {this.props.user.username}</h1>
+                        <Link className="logout" to="/" onClick={()=> (this.props.sessionLogout())}>Logout</Link>
                     </Jumbotron>
                     <h2 className="sub-header-text">Today's open bounties</h2>
                     <SearchContainer />
@@ -45,5 +47,5 @@ const mapStateToProps = ( { user, session } ) => ({
     session
 });
 
-export default connect(mapStateToProps)(UserScreen);
+export default connect(mapStateToProps, { sessionLogout })(UserScreen);
 

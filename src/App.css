@@ -71,3 +71,7 @@ button + button {
 label {
   font-size: 1.25rem;
 }
+
+.logout {
+  color: #069;
+}
