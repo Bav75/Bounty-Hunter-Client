@@ -6,7 +6,7 @@
 // };
 
 export const fetchSearches = () => {
-    const API_URL = 'http://api.stackexchange.com/2.2/questions/featured?order=desc&sort=activity&site=stackoverflow';
+    const API_URL = 'https://api.stackexchange.com/2.2/questions/featured?order=desc&sort=activity&site=stackoverflow';
 
     return (dispatch) => {
         dispatch({type: 'LOADING'});
