@@ -1,8 +1,11 @@
+import { BASE_URL } from '../index';
+
+
 export const removeBounty = (bountyId) => {
 
 
     // const BASE_URL = 'http://localhost:3002';
-    const BASE_URL = 'https://bount-hunter-api.herokuapp.com/';
+    // const BASE_URL = 'https://bount-hunter-api.herokuapp.com/';
     const BOUNTY_URL = BASE_URL + "bounties" + bountyId;
 
 

@@ -8,10 +8,15 @@
 // https://bount-hunter-api.herokuapp.com/
 
 // const BASE_URL = 'http://localhost:3002';
-const BASE_URL = 'https://bount-hunter-api.herokuapp.com/';
-const USERS_URL = BASE_URL + "users";
+// const BASE_URL = 'https://bount-hunter-api.herokuapp.com/';
+
+import { BASE_URL } from '../index';
+
 
 export const createUser = (user, sessionLogin) => {
+
+  const USERS_URL = BASE_URL + "users";
+
 
   const configObject = {
     method: "POST",

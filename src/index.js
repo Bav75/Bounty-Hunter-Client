@@ -15,6 +15,9 @@ import { Layout } from './components/Layout';
 // initialize redux store 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
+// set base URL 
+export const BASE_URL = 'http://localhost:3002/';
+
 ReactDOM.render(
     <Provider store={store}>
         <Layout>
