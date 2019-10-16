@@ -15,8 +15,9 @@ import { Layout } from './components/Layout';
 // initialize redux store 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
-// set base URL 
+// set base & API URLs 
 export const BASE_URL = 'http://localhost:3002/';
+export const API_URL = 'https://api.stackexchange.com/2.2/questions/featured?order=desc&sort=activity&site=stackoverflow';
 
 ReactDOM.render(
     <Provider store={store}>
